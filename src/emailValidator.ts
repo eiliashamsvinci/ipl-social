@@ -1,28 +1,22 @@
 export function validateEmail(email: string): boolean {
-  if (typeof email !== 'string') {
-    return false;
-  }
 
-  if (email.includes(' ')) {
-    return false;
-  }
+      // 0. Must be a string
+  if (typeof email !== 'string') return false;
+  
+  // 1. Must not contain spaces
+  if (email.includes(' ')) return false;
 
+  // 2. Must contain at least one '@'
   const atIndex = email.indexOf('@');
-  if (atIndex === -1) {
-    return false;
-  }
+  if (atIndex <= 0) return false; // ensures text before '@'
 
-  const beforeAt = email.substring(0, atIndex);
-  const afterAt = email.substring(atIndex + 1);
+  // 3. Must have text after '@'
+  const domain = email.slice(atIndex + 1);
+  if (domain.length === 0) return false;
 
-  if (beforeAt.length === 0 || afterAt.length === 0) {
-    return false;
-  }
-
-  const dotIndex = afterAt.indexOf('.');
-  if (dotIndex === -1 || dotIndex === afterAt.length - 1) {
-    return false;
-  }
+  // 4. Domain must contain at least one '.' not at the end
+  const dotIndex = domain.lastIndexOf('.');
+  if (dotIndex <= 0 || dotIndex === domain.length - 1) return false;
 
   return true;
 }
