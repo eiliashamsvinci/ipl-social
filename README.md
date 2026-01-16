@@ -1,13 +1,21 @@
 ## IPL Social
 
-Nom: shams
-Prénom: Eilia
-Email: eilia.shams@student.vinci.be
+**Nom** : Shams
+**Prénom** : Eilia
+**Email Vinci** : [eilia.shams@student.vinci.be](mailto:eilia.shams@student.vinci.be)
 
-Repository: https://github.com/eiliashamsvinci/ipl-social.git
+**Repository GitHub** :
+[https://github.com/eiliashamsvinci/ipl-social.git](https://github.com/eiliashamsvinci/ipl-social.git)
 
-Ce projet contient une pipeline CI avec GitHub Actions.
-Les tests sont exécutés automatiquement à chaque push et pull request.
+### Description du projet
 
-Commande pour lancer les tests:
+Ce projet met en place un environnement DevOps simple à l’aide de **GitHub Actions**.
+Une pipeline de **CI (Intégration Continue)** exécute automatiquement les tests unitaires à chaque **push** et **pull request** vers la branche principale.
+
+### Exécution des tests
+
+Pour lancer les tests localement, utilisez la commande suivante :
+
+```bash
 npm test
+```
